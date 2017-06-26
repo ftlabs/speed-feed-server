@@ -52,6 +52,7 @@ function formatTitles() {
 
 	answerObject.content = content;
 	answerObject.total = content.length;
+	answerObject.latestIndex = latestIndex;
 
 	return answerObject;
 }
