@@ -125,6 +125,6 @@ function apiCall(){
 	hreq.end();
 }
 
-setInterval(apiCall, 1000);
+setInterval(apiCall, 1100);
 
 app.listen(process.env.PORT || 2017);
