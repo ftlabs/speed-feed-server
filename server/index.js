@@ -95,23 +95,25 @@ function apiCall(){
 	    });
 
 	    hres.on('end', function(res) {
-	    	let results = JSON.parse(response).results[0].results;
-	    	let latest = JSON.parse(response).results[0].indexCount;
+	    	if(!!JSON.parse(response).results && JSON.parse(response).results.length > 0) {
+	    		let results = JSON.parse(response).results[0].results;
+		    	let latest = JSON.parse(response).results[0].indexCount;
 
-	    	if (latest > latestIndex) {
-	    		latestIndex = latest;
-	    		articleTitles = [];
+		    	if (latest > latestIndex) {
+		    		latestIndex = latest;
+		    		articleTitles = [];
 
-	    		for(let i = 0; i < results.length; ++i) {
-	    			let item = {
-	    				title: results[i].title.title + '.',
-	    				link: results[i].location.uri
-	    			};
+		    		for(let i = 0; i < results.length; ++i) {
+		    			let item = {
+		    				title: results[i].title.title + '.',
+		    				link: results[i].location.uri
+		    			};
 
-	    			articleTitles.push(item);	
-	    		}
+		    			articleTitles.push(item);	
+		    		}
 
-	    		formattedResponse = formatTitles();
+		    		formattedResponse = formatTitles();
+		    	}	
 	    	}
 	    });
 
@@ -125,6 +127,6 @@ function apiCall(){
 	hreq.end();
 }
 
-setInterval(apiCall, 1100);
+setInterval(apiCall, 1000);
 
 app.listen(process.env.PORT || 2017);
