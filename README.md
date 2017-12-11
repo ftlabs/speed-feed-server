@@ -1,6 +1,6 @@
 # SpeedFeed server
 
-*NOTE* The speedFeed experiment has now ended, and the server was switched off. I you need to revive the service, follow the setup section below.
+**IMPORTANT** The speedFeed experiment has now ended, and the server was switched off. If you need to revive the service, follow the setup section below.
 
 ## What is SpeedFeed?
 SpeedFeed explores the limits of annoyance, combining constant disruption with the usefulness of the latest headlines.
